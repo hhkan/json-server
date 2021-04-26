@@ -1,0 +1,43 @@
+@baseUrl = "http://localhost:3000/api"
+@resounceName = product
+
+#Categories
+# @name getAll
+get {{baseUrl}}/{{resounceName}}
+
+###
+
+# @name fillterProduct
+GET {{baseUrl}}/{{resounceName}}?color=green
+GET {{baseUrl}}/{{resounceName}}?price_gte=00
+
+###
+# # @name addNewProduct
+
+# POST {{baseUrl}}/{{resounceName}}
+# Content-Type: application/json
+
+# {
+#             "categoryId": "7f6f7688-a1e7-4c46-9360-66c2f32f431e",
+#             "name": "Rustic Plastic Ball",
+#             "color": "blue",
+#             "price": 342,
+#             "description": "The Football Is Good For Training And Recreational Purposes",
+#             "thumbnaiUrl": "http://placeimg.com/400/400"
+#         }
+
+# @name addNewUpdate
+PATCH  {{baseUrl}}/{{resounceName}}/2
+Content-Type: application/json
+
+{
+    "name":"alo"
+}
+
+###
+# @name remove
+POST {{baseUrl}}/{{resounceName}}/2
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resounceName}}?_page=1&_limit=20
